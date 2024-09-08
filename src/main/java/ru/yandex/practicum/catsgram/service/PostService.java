@@ -2,14 +2,15 @@ package ru.yandex.practicum.catsgram.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 import ru.yandex.practicum.catsgram.exception.ConditionsNotMetException;
 import ru.yandex.practicum.catsgram.exception.NotFoundException;
 import ru.yandex.practicum.catsgram.model.Post;
+import ru.yandex.practicum.catsgram.model.SortOrder;
 
 import java.time.Instant;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 // Указываем, что класс PostService - является бином и его
 // нужно добавить в контекст приложения
@@ -23,8 +24,27 @@ public class PostService {
         this.userService = userService;
     }
 
-    public Collection<Post> findAll() {
-        return posts.values();
+    public Collection<Post> findAll(int size, String sort, int from) {
+        List<Post> sortedPosts = new ArrayList<>(posts.values());
+
+        // Определяем порядок сортировки
+        SortOrder sortOrder = SortOrder.from(sort);
+        if (sortOrder == null) {
+            throw new ConditionsNotMetException("Неверный порядок сортировки: " + sort);
+        }
+
+        // Сортируем посты по дате создания в зависимости от порядка
+        if (sortOrder == SortOrder.ASCENDING) {
+            sortedPosts.sort(Comparator.comparing(Post::getPostDate));
+        } else {
+            sortedPosts.sort(Comparator.comparing(Post::getPostDate).reversed());
+        }
+
+        // Применяем пагинацию
+        return sortedPosts.stream()
+                .skip(from) // Пропускаем первые 'from' постов
+                .limit(size) // Берем 'size' постов
+                .collect(Collectors.toList()); // Собираем в список
     }
 
     public Post create(Post post) {

@@ -9,7 +9,7 @@ import ru.yandex.practicum.catsgram.service.PostService;
 import java.util.Collection;
 
 @RestController
-@RequestMapping
+@RequestMapping("/posts") // Указываем базовый путь
 public class PostController {
     private final PostService postService;
 
@@ -18,12 +18,25 @@ public class PostController {
         this.postService = postService;
     }
 
-    @GetMapping("/posts")
-    public Collection<Post> findAll() {
-        return postService.findAll();
+    @GetMapping
+    public Collection<Post> findAll(
+            @RequestParam(required = false, defaultValue = "10") int size,
+            @RequestParam(required = false, defaultValue = "0") int page,
+            @RequestParam(required = false, defaultValue = "asc") String sort) {
+
+        // Проверка на корректность параметра size
+        if (size <= 0) {
+            throw new IllegalArgumentException("Size must be greater than zero.");
+        }
+
+        // Расчет значения from для пагинации
+        int from = page * size;
+
+        // Вызов сервиса с заданными параметрами
+        return postService.findAll(size, sort, from);
     }
 
-    @PostMapping(value = "/posts")
+    @PostMapping
     public Post create(@RequestBody Post post) {
         return postService.create(post);
     }
@@ -33,7 +46,7 @@ public class PostController {
         return postService.update(newPost);
     }
 
-    @GetMapping("/posts/{postId}")
+    @GetMapping("/{postId}")
     public Post findPost(@PathVariable long postId) {
         return postService.findPostById(postId);
     }

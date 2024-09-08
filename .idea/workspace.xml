@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f59dde27-c8be-44fd-8521-a629e1db7535" name="Changes" comment="Catsgram_">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/catsgram/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/catsgram/exception/DuplicatedDataException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="f59dde27-c8be-44fd-8521-a629e1db7535" name="Changes" comment="Catsgram_Доработка контроллеров и сервисов">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/catsgram/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/catsgram/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/catsgram/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/catsgram/service/PostService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -178,7 +176,9 @@
       <workItem from="1725395295389" duration="50000" />
       <workItem from="1725555150346" duration="6696000" />
       <workItem from="1725590034731" duration="3199000" />
-      <workItem from="1725637154864" duration="1740000" />
+      <workItem from="1725637154864" duration="2556000" />
+      <workItem from="1725741322012" duration="787000" />
+      <workItem from="1725805087040" duration="4744000" />
     </task>
     <task id="LOCAL-00001" summary="Catsgram_Новый проект про котов и кошек">
       <option name="closed" value="true" />
@@ -220,7 +220,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724620592533</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Catsgram_Доработка контроллеров и сервисов">
+      <option name="closed" value="true" />
+      <created>1725639073378</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1725639073378</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +260,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Catsgram_Новый проект про котов и кошек" />
     <MESSAGE value="Catsgram_проверка" />
-    <option name="LAST_COMMIT_MESSAGE" value="Catsgram_проверка" />
+    <MESSAGE value="Catsgram_Доработка контроллеров и сервисов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Catsgram_Доработка контроллеров и сервисов" />
   </component>
 </project>
