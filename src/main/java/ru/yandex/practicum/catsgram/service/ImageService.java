@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
-import ru.yandex.practicum.catsgram.exception.ConditionsNotMetException;
 import ru.yandex.practicum.catsgram.exception.ImageFileException;
 import ru.yandex.practicum.catsgram.exception.NotFoundException;
 import ru.yandex.practicum.catsgram.model.Image;
@@ -34,14 +33,16 @@ public class ImageService {
     private String imageDirectory;
 
     // сохранение списка изображений, связанных с указанным постом
-    public List<Image> saveImages(long postId, List<MultipartFile> files) {
-        return files.stream().map(file -> saveImage(postId, file)).collect(Collectors.toList());
+//    public List<Image> saveImages(long postId, List<MultipartFile> files) {
+//        return files.stream().map(file -> saveImage(postId, file)).collect(Collectors.toList());
+//    }
+    public List<Image> saveImages(long postId) {
+        return postService.findPostById(postId).getImages().stream().map(imageData -> saveImage(postId, imageData.getFile())).collect(Collectors.toList());
     }
 
     // сохранение отдельного изображения, связанного с указанным постом
     private Image saveImage(long postId, MultipartFile file) {
-        Post post = postService.findById(postId)
-                .orElseThrow(() -> new ConditionsNotMetException("Указанный пост не найден"));
+        Post post = postService.findPostById(postId);
 
         // сохраняем изображение на диск и возвращаем путь к файлу
         Path filePath = saveFile(file, post);
@@ -114,7 +115,7 @@ public class ImageService {
                 return Files.readAllBytes(path);
             } catch (IOException e) {
                 throw new ImageFileException("Ошибка чтения файла.  Id: " + image.getId()
-                        + ", name: " + image.getOriginalFileName(), e);
+                        + ", name: " + image.getOriginalFileName());
             }
         } else {
             throw new ImageFileException("Файл не найден. Id: " + image.getId()

@@ -17,7 +17,7 @@ public class ImageController {
 
     @GetMapping("/posts/{postId}/images")
     public List<Image> getPostImages(@PathVariable("postId") long postId) {
-        return imageService.getPostImages(postId);
+        return imageService.saveImages(postId, );
     }
 
     @ResponseStatus(HttpStatus.CREATED)

@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f59dde27-c8be-44fd-8521-a629e1db7535" name="Changes" comment="Catsgram_Добработан пост-контроллер (@RequestParam)">
+    <list default="true" id="f59dde27-c8be-44fd-8521-a629e1db7535" name="Changes" comment="Catsgram_Дополнил вывод ошибок">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/catsgram/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/catsgram/controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/catsgram/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/catsgram/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/catsgram/controller/ErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/catsgram/controller/ErrorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/catsgram/controller/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/catsgram/controller/ImageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/catsgram/model/SortOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/catsgram/model/SortOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/catsgram/service/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/practicum/catsgram/service/ImageService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +37,21 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;SkoblenkovMaxim&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/SkoblenkovMaxim/Catsgram&quot;,
+    &quot;accountId&quot;: &quot;cd1ef3fe-23bb-4309-b08c-6542882b7b09&quot;
+  }
+}</component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 8
@@ -46,11 +64,9 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Spring Boot.CatsgramApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/User/IdeaProjects/Catsgram&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -58,6 +74,10 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.32873562&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -73,7 +93,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.CatsgramApplication">
+  <component name="RunManager" selected="Application.CatsgramApp">
     <configuration name="CatsgramApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.catsgram.CatsgramApp" />
       <module name="catsgram" />
@@ -132,8 +152,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.CatsgramApp" />
-        <item itemvalue="HTTP Request.generated-requests | #1" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.CatsgramApp" />
       </list>
@@ -182,7 +200,26 @@
       <workItem from="1725822298490" duration="2504000" />
       <workItem from="1725899607895" duration="5446000" />
       <workItem from="1726173888408" duration="391000" />
-      <workItem from="1726244718145" duration="5661000" />
+      <workItem from="1726244718145" duration="5763000" />
+      <workItem from="1726258316413" duration="469000" />
+      <workItem from="1726432248221" duration="75000" />
+      <workItem from="1726639257278" duration="3648000" />
+      <workItem from="1726677622605" duration="632000" />
+      <workItem from="1726770984903" duration="2245000" />
+      <workItem from="1726946189239" duration="2364000" />
+      <workItem from="1727203047844" duration="3403000" />
+      <workItem from="1727232890736" duration="1809000" />
+      <workItem from="1727280891021" duration="4818000" />
+      <workItem from="1727455061113" duration="1084000" />
+      <workItem from="1727461768659" duration="2082000" />
+      <workItem from="1727539971036" duration="752000" />
+      <workItem from="1728324563304" duration="2344000" />
+      <workItem from="1728328871941" duration="6258000" />
+      <workItem from="1728335865632" duration="656000" />
+      <workItem from="1728419646443" duration="640000" />
+      <workItem from="1729444079981" duration="50000" />
+      <workItem from="1733255543169" duration="112000" />
+      <workItem from="1736591491818" duration="2101000" />
     </task>
     <task id="LOCAL-00001" summary="Catsgram_Новый проект про котов и кошек">
       <option name="closed" value="true" />
@@ -240,7 +277,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725816772978</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Catsgram_Дополнил вывод ошибок">
+      <option name="closed" value="true" />
+      <created>1726254442949</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1726254442949</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,6 +319,7 @@
     <MESSAGE value="Catsgram_проверка" />
     <MESSAGE value="Catsgram_Доработка контроллеров и сервисов" />
     <MESSAGE value="Catsgram_Добработан пост-контроллер (@RequestParam)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Catsgram_Добработан пост-контроллер (@RequestParam)" />
+    <MESSAGE value="Catsgram_Дополнил вывод ошибок" />
+    <option name="LAST_COMMIT_MESSAGE" value="Catsgram_Дополнил вывод ошибок" />
   </component>
 </project>
